@@ -16,11 +16,11 @@
     "url": "^0.11.3"
   },
   "scripts": {
-    "start" : "npx parcel index.html"
+    "start": "npx msw init dist/ && npx parcel index.html "
   },
   "msw": {
     "workerDirectory": [
-      "public"
+      "dist"
     ]
   }
 }

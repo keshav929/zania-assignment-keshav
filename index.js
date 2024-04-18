@@ -5,7 +5,14 @@ import { StrictMode } from "react";
 
 async function deferRender(){
     const {worker} = await import('./src/mocks/browser');
-    return worker.start();
+    return worker.start({
+        serviceWorker: {
+            options: {
+                url: './dist/mockServiceWorker.js',
+                scope: ''
+            }
+        }
+    });
 }
 
 const saveDataInStorage = async () => {
